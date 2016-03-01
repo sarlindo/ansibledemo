@@ -1,0 +1,10 @@
+[mcc-webservers]
+192.168.33.10 ansible_user=vagrant ansible_ssh_pass=vagrant
+
+[mcc-appservers]
+192.168.33.11 ansible_user=vagrant ansible_ssh_pass=vagrant
+
+# all servers at mcc
+[mcc:children]
+mcc-webservers
+mcc-appservers

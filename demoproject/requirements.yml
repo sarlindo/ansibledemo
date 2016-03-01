@@ -1,0 +1,3 @@
+# from our private github repo
+- src: git+https://github.com/sarlindo/ansiblerole-mesosmaster.git
+  versions: 3.0.0

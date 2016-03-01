@@ -1,0 +1,20 @@
+---
+- hosts: mcc-webservers
+  name: nginx
+  become: yes
+  become_method: sudo
+  
+  tasks:
+    - name: Install nginx web server
+      apt: pkg=nginx state=installed update_cache=true
+      notify:
+        - start nginx
+
+    - name: Restart nginx
+      service: name=nginx state=restarted
+      tags:
+        - restartnginx
+ 
+  handlers:
+    - name: start nginx
+      service: name=nginx state=started
